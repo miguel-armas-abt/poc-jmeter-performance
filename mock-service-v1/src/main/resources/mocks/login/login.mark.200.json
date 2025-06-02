@@ -1,0 +1,14 @@
+{
+  "customerId": "00654325",
+  "firstName": "Mark",
+  "secondName": "Elliot",
+  "lastName": "Zuckerberg",
+  "securityLevel": 2,
+  "registrationDate": "20250505",
+  "username": "mark.zuckerberg",
+  "email": "mark.zuckerberg@gmail.com",
+  "phone": {
+    "number": "51987654323",
+    "operator": "CLARO"
+  }
+}

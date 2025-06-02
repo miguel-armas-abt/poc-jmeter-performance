@@ -1,0 +1,7 @@
+jmeter.log
+logs/login.log
+logs/products.log
+logs/token.log
+results/result-table.csv
+results/summary-report.csv
+results/view-result-tree.csv

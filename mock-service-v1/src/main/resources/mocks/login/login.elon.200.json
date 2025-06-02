@@ -1,0 +1,14 @@
+{
+  "customerId": "00654322",
+  "firstName": "Elon",
+  "secondName": "Reeve",
+  "lastName": "Musk",
+  "securityLevel": 2,
+  "registrationDate": "20220502",
+  "username": "elon.musk",
+  "email": "elon.musk@gmail.com",
+  "phone": {
+    "number": "51987654323",
+    "operator": "CLARO"
+  }
+}

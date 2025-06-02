@@ -1,0 +1,14 @@
+{
+  "customerId": "00654323",
+  "firstName": "John",
+  "secondName": "Freddy",
+  "lastName": "Vega",
+  "securityLevel": 2,
+  "registrationDate": "20230503",
+  "username": "freddy.vega",
+  "email": "freddy.vega@gmail.com",
+  "phone": {
+    "number": "51987654322",
+    "operator": "CLARO"
+  }
+}

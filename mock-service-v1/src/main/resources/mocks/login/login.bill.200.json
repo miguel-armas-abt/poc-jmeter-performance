@@ -1,0 +1,14 @@
+{
+  "customerId": "00654321",
+  "firstName": "William",
+  "secondName": "Henry",
+  "lastName": "Gates",
+  "securityLevel": 2,
+  "registrationDate": "20210501",
+  "username": "bill.gates",
+  "email": "bill.gates@gmail.com",
+  "phone": {
+    "number": "51987654323",
+    "operator": "CLARO"
+  }
+}

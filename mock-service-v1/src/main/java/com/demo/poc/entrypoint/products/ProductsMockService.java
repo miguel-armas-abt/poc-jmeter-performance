@@ -1,18 +1,18 @@
-package com.demo.poc.entrypoint.login;
+package com.demo.poc.entrypoint.products;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import com.demo.poc.commons.custom.config.MockService;
 import org.apache.http.entity.ContentType;
 import org.mockserver.integration.ClientAndServer;
-import org.mockserver.matchers.MatchType;
 import org.mockserver.model.Header;
 import org.mockserver.model.HttpStatusCode;
-import org.mockserver.model.JsonBody;
+import org.mockserver.model.Parameter;
+import org.mockserver.model.ParameterBody;
 
 import org.springframework.stereotype.Component;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static com.demo.poc.commons.custom.utils.DelayUtil.generateRandomDelay;
 import static com.demo.poc.commons.custom.utils.HeadersGenerator.contentType;
@@ -22,39 +22,21 @@ import static org.mockserver.model.HttpRequest.request;
 import static org.mockserver.model.HttpResponse.response;
 
 @Component
-public class LoginMockService implements MockService {
-
-  private static final List<String> EMAILS_TO_MOCK = Arrays.asList(
-      "bill.gates@gmail.com;login.bill.200.json",
-      "elon.musk@gmail.com;login.elon.200.json",
-      "freddy.vega@gmail.com;login.freddy.200.json",
-      "linus.torvalds@gmail.com;login.linus.200.json",
-      "mark.zuckerberg@gmail.com;login.mark.200.json"
-  );
+public class ProductsMockService implements MockService {
 
   @Override
   public void loadMocks(ClientAndServer mockServer) {
-    for (String metadata : EMAILS_TO_MOCK) {
-      String email = metadata.split(";")[0];
-      String file = metadata.split(";")[1];
-      registerLoginMock(mockServer, email, "mocks/login/" + file);
-    }
-  }
-
-  private void registerLoginMock(ClientAndServer mockServer, String email, String responseJson) {
-    String bodyMatcher = "{\"email\": \"" + email + "\"}";
 
     mockServer
         .when(request()
-            .withMethod("POST")
-            .withPath("/poc/auth/v1/login")
+            .withMethod("GET")
+            .withPath("/poc/products/v1/products")
             .withHeaders(
                 new Header("Subscription-Key", "fake-subscription-key"),
                 contentType(ContentType.APPLICATION_JSON.getMimeType())
-            )
-            .withBody(JsonBody.json(bodyMatcher, MatchType.ONLY_MATCHING_FIELDS))
-        )
+            ))
         .respond(request -> {
+
           long randomDelay = generateRandomDelay();
           Header traceIdHeader = generateTraceId();
 
@@ -62,7 +44,7 @@ public class LoginMockService implements MockService {
               .withStatusCode(HttpStatusCode.OK_200.code())
               .withHeader(contentType(ContentType.APPLICATION_JSON.getMimeType()))
               .withHeader(traceIdHeader)
-              .withBody(readJsonAsString(responseJson))
+              .withBody(readJsonAsString("mocks/products/products.200.json"))
               .withDelay(TimeUnit.MILLISECONDS, randomDelay);
         });
   }
