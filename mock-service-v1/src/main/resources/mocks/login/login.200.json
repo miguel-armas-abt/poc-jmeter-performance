@@ -1,0 +1,14 @@
+{
+  "customerId": "00654321",
+  "firstName": "Linus",
+  "secondName": "Benedict",
+  "lastName": "Torvalds",
+  "securityLevel": 2,
+  "registrationDate": "20200505",
+  "username": "linus.torvalds",
+  "email": "linus.torvalds@gmail.com",
+  "phone": {
+    "number": "51987654321",
+    "operator": "CLARO"
+  }
+}
