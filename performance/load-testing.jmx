@@ -14,11 +14,6 @@
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="variables" enabled="true">
         <collectionProp name="Arguments.arguments">
-          <elementProp name="REPORT_PATH" elementType="Argument">
-            <stringProp name="Argument.name">REPORT_PATH</stringProp>
-            <stringProp name="Argument.value">${__P(workspace,)}${__time(YMDHMS,)}</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="LOGS_TOKEN_FILE" elementType="Argument">
             <stringProp name="Argument.name">LOGS_TOKEN_FILE</stringProp>
             <stringProp name="Argument.value">${__P(workspace,)}\\${__P(logs.token,)}</stringProp>
@@ -41,7 +36,7 @@
           </elementProp>
           <elementProp name="RESULTS_PATH" elementType="Argument">
             <stringProp name="Argument.name">RESULTS_PATH</stringProp>
-            <stringProp name="Argument.value">${__P(workspace,)}\\results</stringProp>
+            <stringProp name="Argument.value">${__P(workspace,)}\\results\\${__time(YMDHMS,)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="LOGGING_GROOVY" elementType="Argument">
