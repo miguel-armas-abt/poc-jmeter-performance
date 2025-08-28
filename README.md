@@ -8,7 +8,7 @@
 
 ---
 
-## 📦 [performance](performance/README.md)
-- El directorio `performance` contiene el script de pruebas de carga.
+## 📦 [load-testing](load-testing/README.md)
+- El directorio `load-testing` contiene el script de pruebas de carga.
 
 <img src="./diagrams.svg" width="400" height="280">
